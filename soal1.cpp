@@ -48,5 +48,12 @@ int main() {
     return 0;
 }
 
-// Program ini digunakan untuk melakukan rotasi kiri pada elemen-elemen di dalam array sebanyak d kali.
-// Artinya, setiap elemen akan bergeser ke kiri dan elemen yang keluar di kiri akan masuk kembali ke bagian kanan array.
+/*
+Program ini melakukan rotasi kiri pada sebuah array sebanyak d kali.
+Rotasi kiri berarti elemen paling depan akan berpindah ke belakang secara berurutan.
+
+- Langkah 1–5: Input jumlah elemen (n), jumlah rotasi (d), dan isi array.
+- Fungsi rotasiKiri memindahkan elemen dari indeks ke-d hingga akhir ke bagian depan.
+- Kemudian, elemen dari awal sampai sebelum indeks ke-d ditaruh di bagian belakang.
+- Hasil akhirnya adalah array yang sudah dirotasi ke kiri sebanyak d kali.
+*/
