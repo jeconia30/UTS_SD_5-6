@@ -56,8 +56,7 @@ int main() {
     return 0;
 }
 
-/*
-📘 Penjelasan:
+/*Penjelasan:
 1. Gunakan BFS agar penyebaran dilakukan per level (hari).
 2. Simpan hari infeksi tiap orang.
 3. Setelah BFS, tampilkan siapa yang hari infeksinya == K.
