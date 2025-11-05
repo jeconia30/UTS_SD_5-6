@@ -47,3 +47,6 @@ int main() {
 
     return 0;
 }
+
+// Program ini digunakan untuk melakukan rotasi kiri pada elemen-elemen di dalam array sebanyak d kali.
+// Artinya, setiap elemen akan bergeser ke kiri dan elemen yang keluar di kiri akan masuk kembali ke bagian kanan array.
