@@ -9,7 +9,7 @@ int main() {
     cout << "Masukkan jumlah orang (V) dan hubungan (E): ";
     cin >> V >> E;
 
-    vector<vector<int>> graph(V + 1);
+    vector<vector<int>> graph(V);
     for (int i = 0; i < E; i++) {
         int u, v;
         cin >> u >> v;
@@ -21,15 +21,13 @@ int main() {
     cout << "Masukkan orang pertama terinfeksi dan hari ke-K: ";
     cin >> S >> K;
 
-    vector<int> hari(V + 1, -1); // -1 artinya belum terinfeksi
+    vector<int> hari(V, -1);
     queue<int> q;
-
     hari[S] = 0;
     q.push(S);
 
     while (!q.empty()) {
-        int orang = q.front();
-        q.pop();
+        int orang = q.front(); q.pop();
         for (int teman : graph[orang]) {
             if (hari[teman] == -1) {
                 hari[teman] = hari[orang] + 1;
@@ -39,21 +37,17 @@ int main() {
     }
 
     vector<int> hasil;
-    for (int i = 1; i <= V; i++) {
-        if (hari[i] == K)
-            hasil.push_back(i);
-    }
+    for (int i = 0; i < V; i++)
+        if (hari[i] == K) hasil.push_back(i);
 
     if (hasil.empty()) {
-        cout << "(TIDAK ADA)" << endl;
+        cout << "(TIDAK ADA)\n";
     } else {
         sort(hasil.begin(), hasil.end());
         cout << "Orang yang terinfeksi pada hari ke-" << K << ": ";
-        for (int x : hasil) cout << x << " ";
-        cout << endl;
+        for (int x : hasil) cout << x << ' ';
+        cout << '\n';
     }
-
-    return 0;
 }
 
 /*Penjelasan:
