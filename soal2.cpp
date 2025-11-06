@@ -12,17 +12,22 @@ int main() {
     for (int i = 0; i < N; i++) {
         string perintah;
         cin >> perintah;
-
+        
+//tambah pasien normal
         if (perintah == "DATANG") {
             string nama;
             cin >> nama;
             normal.push(nama); 
         }
+
+// tambah pasien darurat(masuk ke depan antrian)
         else if (perintah == "DARURAT") {
             string nama;
             cin >> nama;
             darurat.push(nama); 
         }
+
+//LAYANI
         else if (perintah == "LAYANI") {
             if (!darurat.empty()) {
                 cout << darurat.front() << endl;
